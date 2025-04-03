@@ -132,7 +132,7 @@ class App:
             self.btn_update_vars.config(state=ttk.NORMAL)
         except Exception as e:
             messagebox.showerror("Erro", f"Erro ao ler arquivo: {e}")
-            self.logger_util.log_message(f"❌ Erro ao ler arquivo: {e}", logging.ERROR)
+            self.logger_util.log_message(f"Erro ao ler arquivo: {e}", logging.ERROR)
 
     def update_variables(self):
         self.select_file()
@@ -192,10 +192,10 @@ class App:
         email_body = self.text_body.get("1.0", END).strip()
         try:
             df = pd.read_excel(file_path, engine="openpyxl")
-            self.logger_util.log_message(f"📂 Arquivo carregado: {file_path}", logging.DEBUG)
+            self.logger_util.log_message(f"Arquivo carregado: {file_path}", logging.DEBUG)
         except Exception as e:
             messagebox.showerror("Erro", f"Erro ao carregar arquivo: {e}")
-            self.logger_util.log_message(f"❌ Erro ao carregar arquivo: {e}", logging.ERROR)
+            self.logger_util.log_message(f"Erro ao carregar arquivo: {e}", logging.ERROR)
             return
 
         recipients = []
